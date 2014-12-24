@@ -1,0 +1,70 @@
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  sudo: no
+  vars:
+    homebrew_packages_taps:
+      - homebrew/binary
+      - homebrew/dupes
+    homebrew_packages_packages:
+      - { name: android-sdk }
+      - { name: ansible }
+      - { name: ant }
+      - { name: brew-cask }
+      - { name: gibo }
+      - { name: git }
+      - { name: pidcat }
+      - { name: python }
+      - { name: redis }
+      - { name: tomcat6 }
+    homebrew_cask_packages_packages:
+      - atom
+      - cyberduck
+      - dropbox
+      - evernote
+      - firefox
+      - genymotion
+      - google-chrome
+      - google-japanese-ime
+      - java
+      - macwinzipper
+      - netbeans
+      - prott
+      - remote-desktop-connection
+      - skype
+      - sourcetree
+      - vagrant
+      - virtualbox
+    atom_packages_packages:
+      - atom-alignment
+      - atom-beautify
+      - atom-color-highlight
+      - atom-terminal
+      - autoclose-html
+      - autocomplete-paths
+      - autocomplete-plus
+      - autocomplete-snippets
+      - bracket-matcher
+      - color-picker
+      - compare-files
+      - emmet
+      - file-icons
+      - git-plus
+      - highlight-selected
+      - language-jade
+      - linter
+      - linter-coffeelint
+      - linter-csslint
+      - linter-jshint
+      - merge-conflicts
+      - minimap
+      - project-manager
+      - recent-files
+      - remember-session
+      - script
+      - web-view
+      - Stylus
+  roles:
+    - hnakamur.homebrew-packages
+    - hnakamur.homebrew-cask-packages
+    - hnakamur.atom-packages
