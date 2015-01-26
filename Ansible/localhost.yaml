@@ -13,12 +13,16 @@
       - { name: brew-cask }
       - { name: gibo }
       - { name: git }
+      - { name: node }
       - { name: pidcat }
       - { name: python }
       - { name: redis }
       - { name: tomcat6 }
     homebrew_cask_packages_packages:
+      - appcleaner
+      - appium
       - atom
+      - clipmenu
       - cyberduck
       - dropbox
       - evernote
@@ -27,6 +31,7 @@
       - google-chrome
       - google-japanese-ime
       - java
+      - justinmind
       - macwinzipper
       - netbeans
       - prott
