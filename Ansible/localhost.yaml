@@ -38,8 +38,10 @@
       - remote-desktop-connection
       - skype
       - sourcetree
+      - svnx
       - vagrant
       - virtualbox
+      - xtrafinder
     atom_packages_packages:
       - atom-alignment
       - atom-beautify
