@@ -13,6 +13,7 @@
       - { name: brew-cask }
       - { name: gibo }
       - { name: git }
+      - { name: grads }
       - { name: node }
       - { name: pidcat }
       - { name: python }
@@ -44,6 +45,7 @@
       - unity-web-player
       - vagrant
       - virtualbox
+      - xquartz
       - xtrafinder
     atom_packages_packages:
       - atom-alignment
@@ -65,7 +67,7 @@
       - linter
       - linter-coffeelint
       - linter-csslint
-      - linter-jshint
+      - linter-eslint
       - merge-conflicts
       - minimap
       - project-manager
