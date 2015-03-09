@@ -45,6 +45,7 @@
       - unity-web-player
       - vagrant
       - virtualbox
+      - xampp
       - xquartz
       - xtrafinder
     atom_packages_packages:
