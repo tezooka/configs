@@ -10,7 +10,9 @@
       - { name: android-sdk }
       - { name: ansible }
       - { name: ant }
+      - { name: boot2docker }
       - { name: brew-cask }
+      - { name: docker }
       - { name: gibo }
       - { name: git }
       - { name: grads }
@@ -32,6 +34,7 @@
       - github
       - google-chrome
       - google-japanese-ime
+      - iterm2
       - java
       - justinmind
       - kindle
