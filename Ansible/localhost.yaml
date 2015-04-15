@@ -16,19 +16,21 @@
       - { name: gibo }
       - { name: git }
       - { name: grads }
+      - { name: mongodb }
       - { name: node }
       - { name: pidcat }
       - { name: python }
       - { name: redis }
       - { name: tomcat6 }
+      - { name: typesafe-activator}
     homebrew_cask_packages_packages:
       - appcleaner
       - appium
       - atom
       - clipmenu
-      - cyberduck
       - dropbox
       - evernote
+      - filezilla
       - firefox
       - genymotion
       - github
@@ -38,6 +40,7 @@
       - java
       - justinmind
       - kindle
+      - macports
       - macwinzipper
       - netbeans
       - prott
