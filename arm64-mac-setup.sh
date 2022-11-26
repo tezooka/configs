@@ -29,7 +29,7 @@ else
   echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
   source ~/.zprofile
 fi
-if type "brew" > /dev/null 2>$1; then
+if type "brew" > /dev/null 2>&1; then
   echo -e "✅ brew already exist"
 else
   echo -e "🙅 Homebrew was not exist\nInstall Homebrew"
