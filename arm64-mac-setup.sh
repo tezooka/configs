@@ -34,7 +34,16 @@ if type "brew" > /dev/null 2>$1; then
 else
   echo -e "🙅 Homebrew was not exist\nInstall Homebrew"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  echo -e ".zprofile"
-  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
-  source ~/.zprofile
+  exit
+fi
+
+###########
+# Ansible #
+###########
+echo -e "-----\nCheck Ansible"
+if type "ansible" >/dev/null 2>&1; then
+  echo -e "✅ Ansible already exist"
+else
+  echo -e "🙅 ansible was not installed"
+  brew install ansible
 fi
