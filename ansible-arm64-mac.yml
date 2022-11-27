@@ -1,0 +1,47 @@
+- hosts: localhost
+
+  vars:
+    homebrew_taps:
+      - homebrew/cask
+    homebrew_packages:
+      - anyenv
+      - google-cloud-sdk
+      - git
+    homebrew_cask_packages:
+      - name: 1password
+      - name: atom
+      - name: clipy
+      - name: docker
+      - name: deepl
+      - name: google-chrome
+      - name: google-drive
+      - name: google-japanese-ime
+      - name: gitkraken
+      - name: jetbrains-toolbox
+      - name: karabiner-elements
+      - name: rectangle
+      - name: slack
+      - name: tailscale
+
+  tasks:
+    - name: setup homebrew
+      ignore_errors: yes
+      block:
+        - name: homebrew update
+          homebrew:
+            update_homebrew: yes
+        - name: homebrew tap
+          homebrew_tap:
+            name: '{{ item }}'
+            state: present
+          with_items: '{{ homebrew_taps }}'
+        - name: homebrew packages install
+          homebrew:
+            name: '{{ item.name }}'
+            state: '{{ item.state | default("present") }}'
+          with_items: '{{ homebrew_packages}}'
+    - name: homebrew cask packages install
+      comunity.general.homebrew_cask: name={{ item.name }} state=installed
+      environment:
+        HOMEBREW_CASK_OPS: "--appdir=/Applications"
+      with_items: '{{ homebrew_cask_packages }}'
