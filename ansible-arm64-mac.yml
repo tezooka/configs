@@ -5,9 +5,8 @@
     homebrew_taps:
       - homebrew/cask
     homebrew_packages:
-      - anyenv
-      - google-cloud-sdk
-      - git
+      - name: anyenv
+      - name: git
     homebrew_cask_packages:
       - name: 1password
       - name: atom
@@ -15,6 +14,7 @@
       - name: docker
       - name: deepl
       - name: google-chrome
+      - name: google-cloud-sdk
       - name: google-drive
       - name: google-japanese-ime
       - name: gitkraken
@@ -42,7 +42,7 @@
             state: '{{ item.state | default("present") }}'
           with_items: '{{ homebrew_packages }}'
     - name: homebrew cask packages install
-      comunity.general.homebrew_cask: name={{ item.name }} state=installed
+      community.general.homebrew_cask: name={{ item.name }} state=installed
       environment:
-        HOMEBREW_CASK_OPS: "--appdir=/Applications"
+        HOMEBREW_CASK_OPTS: "--appdir=/Applications"
       with_items: '{{ homebrew_cask_packages }}'
