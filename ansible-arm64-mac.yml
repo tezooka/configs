@@ -1,4 +1,5 @@
 - hosts: localhost
+  connection: local
 
   vars:
     homebrew_taps:
@@ -39,7 +40,7 @@
           homebrew:
             name: '{{ item.name }}'
             state: '{{ item.state | default("present") }}'
-          with_items: '{{ homebrew_packages}}'
+          with_items: '{{ homebrew_packages }}'
     - name: homebrew cask packages install
       comunity.general.homebrew_cask: name={{ item.name }} state=installed
       environment:
