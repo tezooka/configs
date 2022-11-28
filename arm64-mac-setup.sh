@@ -65,17 +65,17 @@ fi
 ####################
 echo -e "-----\nCheck Google Cloud SDK"
 if [ -f ~/.zshrc ]; then
-  if [ "`cat ~/.zshrc | grep -e "source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'" -e "source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'"`" ]; then
+  if [ "`cat ~/.zshrc | grep -e "source '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'" -e "source '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'"`" ]; then
     echo -e '✅ Google Cloud SDK PATH already exist'
   else
     echo -e '🙅 Google Cloud SDK PATH was not exist\nUpdate .zshrc'
-    echo "source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'" >> ~/.zshrc
-    echo "source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'" >> ~/.zshrc
+    echo "source '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'" >> ~/.zshrc
+    echo "source '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'" >> ~/.zshrc
     source ~/.zshrc
   fi
 else
   echo -e '🙅 Google Cloud SDK PATH was not exist\nUpdate .zshrc'
-  echo "source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'" >> ~/.zshrc
-  echo "source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'" >> ~/.zshrc
+  echo "source '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'" >> ~/.zshrc
+  echo "source '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'" >> ~/.zshrc
   source ~/.zshrc
 fi
