@@ -71,9 +71,11 @@ if [ -f ~/.zshrc ]; then
     echo -e '🙅 Google Cloud SDK PATH was not exist\nUpdate .zshrc'
     echo "source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'" >> ~/.zshrc
     echo "source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'" >> ~/.zshrc
+    source ~/.zshrc
   fi
 else
   echo -e '🙅 Google Cloud SDK PATH was not exist\nUpdate .zshrc'
   echo "source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'" >> ~/.zshrc
   echo "source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'" >> ~/.zshrc
+  source ~/.zshrc
 fi
