@@ -50,15 +50,15 @@ fi
 
 echo -e "-----\nAnsible Deploy"
 cd ~
-curl -O -sfSL https://raw.githubusercontent.com/tezooka/configs/master/ansible-arm64-mac.yml
-if [ -f ~/ansible-arm64-mac.yml ]; then
+# curl -O -sfSL https://raw.githubusercontent.com/tezooka/configs/master/ansible-arm64-mac.yml
+# if [ -f ~//ansible-arm64-mac.yml ]; then
   ansible-galaxy collection install community.general
-  ansible-playbook ansible-arm64-mac.yml --ask-become-pass
-  rm ~/ansible-arm64-mac.yml
-else
-  echo -e "🙅 ansible-playbook was not downloaded"
-  exit
-fi
+  ansible-playbook /Users/tezuka/Documents/workspace/private/configs/ansible-arm64-mac.yml --ask-become-pass
+  # rm ~/ansible-arm64-mac.yml
+# else
+#   echo -e "🙅 ansible-playbook was not downloaded"
+#   exit
+# fi
 
 ####################
 # Google Cloud SDK #
@@ -77,5 +77,76 @@ else
   echo -e '🙅 Google Cloud SDK PATH was not exist\nUpdate .zshrc'
   echo "source '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'" >> ~/.zshrc
   echo "source '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'" >> ~/.zshrc
+  source ~/.zshrc
+fi
+
+##########
+# Anyenv #
+##########
+echo -e '-----\nCheck anyenv'
+if [ -f ~/.zshrc ]; then
+  if [ "`cat ~/.zshrc | grep 'eval "$(anyenv init -)"'`" ]; then
+    echo -e '✅ anyenv PATH already exist'
+  else
+    echo -e '🙅 anyenv PATH was not exist\nUpdate .zshrc'
+    echo 'eval "$(anyenv init -)"' >> ~/.zshrc
+    source ~/.zshrc
+  fi
+else
+  echo -e '🙅 anyenv PATH was not exist\nUpdate .zshrc'
+  echo 'eval "$(anyenv init -)"' >> ~/.zshrc
+  source ~/.zshrc
+fi
+if type "anyenv" > /dev/null 2>&1; then
+  echo -e "✅ anyenv already exist"
+else
+  echo -e "🙅 anyenv was not exist"
+  brew install anyenv
+fi
+anyenv install --init
+
+##########
+# nodenv #
+##########
+echo -e '-----\nCheck Nodenv'
+if type 'nodenv' > /dev/null 2>&1; then
+  echo -e '✅ nodenv already exist'
+else
+  echo -e "🙅 nodenv was not exist"
+  anyenv install nodenv
+  exec $SHELL -l
+fi
+
+#########
+# pyenv #
+#########
+echo -e '-----\nCheck pyenv'
+if type 'pyenv' > /dev/null 2>&1; then
+  echo -e '✅ pyenv already exist'
+else
+  echo -e "🙅 pyenv was not exist"
+  anyenv install pyenv
+  exec $SHELL -l
+fi
+
+######
+# Go #
+######
+echo -e '-----\nCheck GoLang'
+if [ -f ~/.zshrc ]; then
+  if [ "`cat ~/.zshrc | grep -e 'export GOPATH=$HOME/go' -e 'export GOBIN=$GOPATH/bin' -e 'export PATH=$PATH:$GOBIN'`" ]; then
+    echo -e '✅ Go PATH already exist'
+  else
+    echo -e '🙅 Go PATH was not exist\nUpdate .zshrc'
+    echo 'export GOPATH=$HOME/go' >> ~/.zshrc
+    echo 'export GOBIN=$GOPATH/bin' >> ~/.zshrc
+    echo 'export PATH=$PATH:$GOBIN' >> ~/.zshrc
+    source ~/.zshrc
+  fi
+else
+  echo -e '🙅 Go PATH was not exist\nUpdate .zshrc'
+  echo 'export GOPATH=$HOME/go' >> ~/.zshrc
+  echo 'export GOBIN=$GOPATH/bin'
+  echo 'export PATH=$PATH:$GOBIN' >> ~/.zshrc
   source ~/.zshrc
 fi
