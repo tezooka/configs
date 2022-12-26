@@ -7,6 +7,8 @@
     homebrew_packages:
       - name: anyenv
       - name: git
+      - name: go
+      - name: mas
     homebrew_cask_packages:
       - name: 1password
       - name: atom
@@ -22,7 +24,8 @@
       - name: karabiner-elements
       - name: rectangle
       - name: slack
-      - name: tailscale
+    apps:
+      - { name: "Tailscale", id: "1475387142" }
 
   tasks:
     - name: setup homebrew
@@ -46,3 +49,14 @@
       environment:
         HOMEBREW_CASK_OPTS: "--appdir=/Applications"
       with_items: '{{ homebrew_cask_packages }}'
+    - name: install from AppStore
+      block:
+        - name: fetch list
+          command: mas
+          register: installed_list
+          check_mode: no
+          changed_when: no
+        - name: install from AppStore
+          command: "mas install {{ item.id }}"
+          when: "installed_list.stdout_lines | select('search', item.id) | list | length == 0"
+          loop: "{{ apps }}"
