@@ -10,14 +10,12 @@
       - name: go
       - name: mas
     homebrew_cask_packages:
-      - name: 1password
       - name: app-cleaner
       - name: clipy
       - name: docker
       - name: deepl
       - name: google-cloud-sdk
       - name: google-drive
-      - name: google-japanese-ime
       - name: gitkraken
       - name: jetbrains-toolbox
       - name: karabiner-elements
