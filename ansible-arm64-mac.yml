@@ -11,6 +11,7 @@
       - name: mas
     homebrew_cask_packages:
       - name: 1password
+      - name: app-cleaner
       - name: atom
       - name: clipy
       - name: docker
