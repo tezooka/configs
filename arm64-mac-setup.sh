@@ -50,15 +50,15 @@ fi
 
 echo -e "-----\nAnsible Deploy"
 cd ~
-# curl -O -sfSL https://raw.githubusercontent.com/tezooka/configs/master/ansible-arm64-mac.yml
-# if [ -f ~//ansible-arm64-mac.yml ]; then
+curl -O -sfSL https://raw.githubusercontent.com/tezooka/configs/master/ansible-arm64-mac.yml
+if [ -f ~//ansible-arm64-mac.yml ]; then
   ansible-galaxy collection install community.general
   ansible-playbook /Users/tezuka/Documents/workspace/private/configs/ansible-arm64-mac.yml --ask-become-pass
-  # rm ~/ansible-arm64-mac.yml
-# else
-#   echo -e "🙅 ansible-playbook was not downloaded"
-#   exit
-# fi
+  rm ~/ansible-arm64-mac.yml
+else
+  echo -e "🙅 ansible-playbook was not downloaded"
+  exit
+fi
 
 ####################
 # Google Cloud SDK #
