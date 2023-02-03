@@ -12,7 +12,6 @@
     homebrew_cask_packages:
       - name: 1password
       - name: app-cleaner
-      - name: atom
       - name: clipy
       - name: docker
       - name: deepl
@@ -25,6 +24,7 @@
       - name: karabiner-elements
       - name: rectangle
       - name: slack
+      - name: visual-studio-code
     apps:
       - { name: "Tailscale", id: "1475387142" }
 
