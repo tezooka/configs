@@ -15,7 +15,6 @@
       - name: clipy
       - name: docker
       - name: deepl
-      - name: google-chrome
       - name: google-cloud-sdk
       - name: google-drive
       - name: google-japanese-ime
@@ -23,7 +22,6 @@
       - name: jetbrains-toolbox
       - name: karabiner-elements
       - name: rectangle
-      - name: slack
       - name: visual-studio-code
     apps:
       - { name: "Tailscale", id: "1475387142" }
