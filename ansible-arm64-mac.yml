@@ -8,6 +8,7 @@
       - name: anyenv
       - name: git
       - name: go
+      - name: gpg
       - name: mas
     homebrew_cask_packages:
       - name: app-cleaner
