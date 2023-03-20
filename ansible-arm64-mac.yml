@@ -18,6 +18,7 @@
       - name: google-cloud-sdk
       - name: google-drive
       - name: gitkraken
+      - name: iterm2
       - name: jetbrains-toolbox
       - name: karabiner-elements
       - name: kindle
