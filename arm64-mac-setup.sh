@@ -91,11 +91,15 @@ if [ -f ~/.zshrc ]; then
     echo -e '🙅 anyenv PATH was not exist\nUpdate .zshrc'
     echo 'eval "$(anyenv init -)"' >> ~/.zshrc
     source ~/.zshrc
+    mkdir -p $(anyenv root)/plugins
+    git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update
   fi
 else
   echo -e '🙅 anyenv PATH was not exist\nUpdate .zshrc'
   echo 'eval "$(anyenv init -)"' >> ~/.zshrc
   source ~/.zshrc
+  mkdir -p $(anyenv root)/plugins
+  git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update
 fi
 if type "anyenv" > /dev/null 2>&1; then
   echo -e "✅ anyenv already exist"
