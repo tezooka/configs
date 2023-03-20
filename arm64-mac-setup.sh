@@ -131,6 +131,8 @@ else
   echo -e "🙅 pyenv was not exist"
   anyenv install pyenv
   exec $SHELL -l
+  mkdir -p "$(nodenv root)/plugins"
+  git clone https://github.com/pine/nodenv-yarn-install.git "$(nodenv root)/plugins/nodenv-yarn-install"
 fi
 
 ######
