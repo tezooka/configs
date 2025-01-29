@@ -21,7 +21,6 @@
       - name: iterm2
       - name: jetbrains-toolbox
       - name: karabiner-elements
-      - name: kindle
       - name: rectangle
       - name: visual-studio-code
     apps:
