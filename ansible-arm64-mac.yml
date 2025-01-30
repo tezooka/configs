@@ -12,9 +12,11 @@
       - name: mas
     homebrew_cask_packages:
       - name: app-cleaner
+      - name: arc
       - name: clipy
       - name: docker
       - name: deepl
+      - name: figma
       - name: google-cloud-sdk
       - name: google-drive
       - name: gitkraken
