@@ -106,8 +106,8 @@ if type "anyenv" > /dev/null 2>&1; then
 else
   echo -e "🙅 anyenv was not exist"
   brew install anyenv
+  anyenv install --init
 fi
-anyenv install --init
 
 ##########
 # nodenv #
